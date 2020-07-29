@@ -1,173 +1,88 @@
-DataStax Developer's Notebook - Monthly Articles 2019
+DataStax Developer's Notebook - Monthly Articles 2020
 ===================
 
-| **[Monthly Articles - 2019](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/README.md)** | **[Monthly Articles - 2018](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2018/README.md)** | **[Monthly Articles - 2017](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2017/README.md)** |
-|-------------------------|--------------------------|--------------------------|
+| **[Monthly Articles - 2020](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/README.md)** | **[Monthly Articles - 2019](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/README.md)** | **[Monthly Articles - 2018](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2018/README.md)** | **[Monthly Articles - 2017](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2017/README.md)** |
+|-------------------------|--------------------------|--------------------------|--------------------------|
 
 This is a personal blog where we answer one or more questions each month from DataStax customers in a non-official, non-warranted, non much of anything forum. 
 
-2019 August - -
->Customer: My company has a number of shortest-path problems, for example; airlines, get me from SFO to 
->JFK for passenger and freight routing. I understand graph analytics may be a means to solve this problem. 
->Can you help ?
+June 2020 - -
+>Customer: My company is investigating using DataStax database as a service, titled DataStax Astra (Astra), to aid 
+>in our application development. I know Astra is exactly equal to Apache Cassandra, which means that the DataStax 
+>Enterprise DSE Search component is not present. 
 >
->Daniel: Excellent question ! Previously in this document series we have overviewed the topic of graph 
->databases (June/2019, updated from January/2019). Also, we have deep dived on the topic of product 
->recommendation engines using Apache Spark (DSE Analytics) machine learning, and also DSE Graph, 
->performing a compare/contrast of the analytics each environment offers (July/2019).
+>As such, we lose Solr/Lucene, and any geo-spatial index and query processing support. But, our application needs 
+>geospatial query support. Can you help ?
 >
->In this edition of this document, we will address graph analytics, shortest path. While we previously 
-overviewed graph, we’ve never detailed the graph query language titled, Apache Gremlin. Gremlin is a 
->large topic, way larger and more capable than SQL SELECT. Thus, we will, in this document, begin a 
->series of at least 3 articles, they being;
+>Daniel: Excellent question ! You will be surprised how easy this is to address. In this article we detail how you 
+>deliver geospatial queries using DataStax Astra, or just the DataStax Enterprise (DSE) Core functional component, 
+>(and not use DSE Search).
 >
->  • Setup a DSE (Graph) version 6.8, Python client for both OLTP and OLAP. (This document)
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_42_AstraGeohash.pdf)
 >
->  • Deliver the shortest path solution using DSE Graph with a Python Web client user interface.
+>[Application program code](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_42_AstraGeohash_Programs.tar.gz)
 >
->  • Deliver a part-1 primer on Apache Gremlin, so that you may better understand the query (Gremlin 
->traversal) used to calculate shortest path.
+>[Application program data](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_42_AstraGeohash_Data.pipe.gz)
 >
+>(Because of GitHub file size limits, the above data file contains only 250,000 of the promised 334,000 lines of data. Sorry.)
 >
->[Download Whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_32_Python68Client.pdf)
->
->[Application program code](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_32_Python68Client.py)
+>[Demonstration video](https://www.youtube.com/watch?v=RVso51X0A08)
 
+May 2020 - -
+>Customer: My company has got to improve its efficiency and time to delivery when creating business applications on 
+>Apache Cassandra and DataStax Enterprise. Can you help ?
+>
+>Daniel: Excellent question ! Since you specfically mentioned application development, we will give focus to API 
+>endpoint programming; a means to more greatly decouple your application from the database, allowing for greater 
+>flexibility in deployment, and even increasing performance of Web and mobile applications.
+>
+>While we might briefly mention REST and gRPC, the bulk of this document will center on GraphQL.
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_41_GraphQL.pdf)
 
-2019 July - -
->Customer: I'm confused. I saw a presentation at the 2019 DataStax world conference (Accelerate 2019), 
->detailing how to deliver a product recommendation engine using DSE Graph. I've also seen DSE articles 
->detailing how to deliver a product recommendation engine using DSE Analytics. Can you help ?
+April 2020 - -
+>Customer: My company has started using more cloud instances for tasks like proof of concepts, and related. 
+>We used to just leave these boxes wide open, since they generally contain zero sensitive data. But, things 
+>being what they are, we feel like we should start securing these boxes. Can you help ?
 >
->Daniel: Excellent question ! As discussed in previous editions of this document; there are 4 primary 
->functional areas within DataStax Enterprise (DSE). DSE Analytics can deliver a ‘content-based’ product 
->recommendation (aka, product-product). DSE Graph can deliver a ‘collaborative-based’ product recommendation 
->engine (aka, user-user). Both DSE Analytics and DSE Graph use DSE Core as their storage engine, and DSE 
->Search as their advanced index engine; a full integration, not just a connector.
+>Daniel: Excellent question ! In the March/2019 edition of this document, we detailed how to implement 
+>native authentication using DataStax Enterprise (DSE). In this edition, we detail how to implement SSL 
+>between DSE server nodes (in the event you go multi-cloud), and then also SSL from client (node) to DSE 
+>cluster.
 >
->In this edition of this document we’ll detail all of the code needed to deliver the above, and include 
->data. We’ll also use this edition of this document to provide a Graph query primer (Gremlin language 
->primer), and answer the nuanced question of; Why Graph ?
->
->[Download Whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31a_DSE%2C%20Reco%20Engines.pdf)
->
->[PowerPoint (mesaurably more detailed than above)](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31b_DSE%2C%20Reco%20Engines.pptx)
->
->[Video recording of the PPT above](https://www.youtube.com/watch?v=15xUt1sZ48U&feature=youtu.be)
->
->[Just Grocery Data as Tar](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31c_JustGroceryData.tar)
->
->[All Program Code as Txt](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31d_AllCommands.txt)
->
->[DataStax KillrVideo demo DB data as Tar](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31e_KillrVideoDataAsPipe.tar)
->
->[DataStax KillrVideo demo DB DDL as Txt (vers 6.8, fyi)](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_31f_KillrVideoDDL.cql)
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_40_SSL.pdf)
 
+March 2020 - -
+>Customer: As a database application developer, I’ve never previously used a system with a natively asynchronous 
+>client side driver. What do I need to know; Can you help ?
+>
+>Daniel: Excellent question ! Yes, the DataStax Enterprise (DSE) client side drivers offer entirely native 
+>asynchronous operation.; fire and forget, or fire and listen. There are easy means to make the driver and 
+>any calls you issue block, and behave synchronously, but there’s little fun in that.
+>
+>The on line documentation covers the asynchronous query topic well, so we’ll review that and then extend 
+>into asynchronous write programming.
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_39_DriverFutures.pdf)
 
-2019 June - -
+February 2020 - -
 
->Customer: I saw the January/2019 article where you introduced graph computing using Apache TinkerPop, 
->aka, DataStax Enterprise Graph. Now I see that you’ve released an EAP (early access program, preview) 
->DataStax Enterprise version 6.8 with significant changes to graph, including a new storage model. I 
->figure there’s a bunch of new stuff I need to know. Can you help ?
+>Customer: I’ve read all of the articles and documentation related to DataStax Enterprise (DSE) Graph, but am 
+>still not certain how these graph queries (traversals) actually execute. To me, this looks much like a SQL 
+>query processing engine, and I don’t know how or if to index or model this. Can you help ?
 >
->Daniel: Excellent question ! Yes. In this edition of DataStax Developer’s Notebook (DDN), we’ll update 
->the January/2019 document with new version 6.8 DSE capabilities, and do a bit of compare and contrast. 
->Keep in mind as an EAP, version 6.8 is proposed, early preview. Version 6.8 may change drastically.
+>Daniel: Excellent question ! In this document we’ll give a brief treatment to graph query processing; how 
+>graph traversals are actually (executed). For fun, we’ll actually talk a little bit about a close (graph) 
+>neighbor, Neo4J.
 >
->In this document, we detail that you no longer need GraphFrames; inserting using standard DataFrames
->saves a bunch of processing steps, and still performs just as well. We detail the new version 6.8 
->storage model, which is also much simpler over version 6.7. (Everything is stored directly in DSE Core 
->tables, and directly support DSE Core CQL queries.)
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_30_GraphPrimer%2068.pdf)
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_38_FileMethods.pdf)
 
+January 2020 - -
 
-2019 May - -
-
->Customer: As a developer I’ve been using Redis for 6 years, and now my company tells me I have to move 
->all of my work to Apache Kafka. Can you help ?
+>Customer: My company maintains a lot of data on Hadoop, in Parquet and other formats, and need to perform integrated 
+>reporting with data resident inside DataStax. Can you help ?
 >
->Daniel: Excellent question ! Management, huh ? We say that because Redis and Kafka are not the same. 
->In fact, Redis seems to have really re-energized in the past 4 years, with many strategic enhancements. 
->Redis has held the number four spot on DB-Engines.com database ranking for some time. Kafka, while 
->used by nearly everyone, seems to place 60% of their workloads serving mainframe off loads; guaranteed 
->message delivery possibly to multiple consumers. (A scale out of subscribe in publish/subscribe.)
+>Daniel: Excellent question ! Yes. This is like a two-liner solution. We’ll detail all of the concepts and code inside 
+>this document.
 >
->In this document, we’ll install and configure a single node (stand alone) Kafka cluster, learn to write 
->and read messages, and install and configure the DataStax Kafka Connector (Kafka Connector). Using the 
->Kafka Connector, you can push Kafka messages into DataStax Enterprise and the DataStax Distribution of 
->Cassandra (DDAC) without writing any program code. Cool.
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_29_Kafka.pdf)
-
-
-2019 April - -
-
->Customer: I work on my laptop using Python, R, and Jupyter Notebooks, doing analytics for my company. 
->I’ve been digging on the analytics topics built inside DataStrax Enterprise (pre-installed, data co-located 
->with the analytics routines), but don’t see how I can make use of any of this. Can you help ?
->
->Daniel: Excellent question ! Isn’t Python and R the number one data science software pairing on the 
->planet ? (Regardless, it must be in the top two.) DataStax Enterprise ships pre-configured with a 
->Python interpreter, and R. For R, don’t know why, you must install one new external library.
->
->We do have a bias towards Spark/R, since Spark/R seemed to lead in the area of open source parallel c
->apable routines. (Speed, performance, better documentation.)
->
->Jupyter is also an excellent choice, especially if you’re Python focused. We’ve not yet looked at 
->the Anaconda distribution of Jupyter, which seems very promising. We’ll show a Jupyter install, 
->but may ourselves stick with Apache Zeppelin, since Zeppelin seems to come pre-installed/pre-configured 
->for so many more languages and options out of the box. (Less work for us.)
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_28_Jupyter%2C%20R.pdf)
-
-
-2019 March - -
-
->Customer: My company was using application server tiered security, and now needs to implement 
->database tier level security. Can you help ?
->
->Daniel: Excellent question ! Obviously security is a broad topic; OS level security (the OS 
->hosting DSE), database level security, data in flight, data at rest, and more.
->
->Minimally we’ll overview DSE security, and detail how to implement password protection of same.
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_27_Security.pdf)
-
-
-2019 February - -
-
->Customer: I need to program an inventory management system, and wish to use the time stamp, time to 
->live, and other features found within DSE. Can you help ?
->
->Daniel: Excellent question ! The design pattern you implement differs when you are selling a distinct 
->inventory (specifically numbered seats to a concert), or you are selling a true-count, number on hand 
->inventory (all items are the same).
->
->Regardless, we will cover all of the relevant topics, and detail how to program same using DSE Core 
->and DSE Analytics (Apache Spark).
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_26_Inventory.pdf)
-
-
-2019 January - - 
-
->Customer: Graph, graph, graph; what the heck is up with graph- I think (hope ?) there’s something graph 
->databases do that standard relational databases do not, but I can’t articulate what that function or 
->advantage actually is. Can you help ?
->
->Daniel: Excellent question !  Yes, but we’re going to take two editions of this document to do so. Sometimes 
->there are nuances when discussing databases; what really is the difference between a data warehouse, 
->data mart, data lake, other ? Why couldn’t you recreate some or most non-relational database function 
->using a standard relational database ?
->
->In this edition of DataStax Developer’s Notebook (DDN), we provide a graph database primer; create a 
->graph, and load it. In a future edition of this same document, we will actually have the chance to 
->provide examples where you might determine that graph databases have an advantage over relational 
->databases for certain use cases.
->
->[Download here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/DDN_2019_25_GraphPrimer.pdf)
->
->[Resource Kit](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2019/41%20Simple%20Customer%20Graph.txt), all of the data and programs used in this edition in ASCII text format.
->
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_37_Parquet.pdf)
