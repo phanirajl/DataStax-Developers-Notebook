@@ -6,6 +6,61 @@ DataStax Developer's Notebook - Monthly Articles 2020
 
 This is a personal blog where we answer one or more questions each month from DataStax customers in a non-official, non-warranted, non much of anything forum. 
 
+October 2020 - -
+>Customer: I love the GraphQL, Python/Flask, OpenStreetView, geo-spatial discussion this series has had of late. I’m having trouble 
+>putting it all together. Any chance you can put it all in one deliverable. Can you help ?
+>
+>Daniel: Excellent question ! In this article, we assemble all of the pieces we’ve recently discussed, putting them all in one 
+>coordinated deliverable. We’ll detail the data format, start up scripts, the program proper, and even any HTML related to 
+>OpenStreetView. (Eg., not Google Maps.)
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_46_BetterVersOf42.pdf)
+
+September 2020 - -
+>Customer: My company is all in on micro-services, container and cloud for application development, server hosting including databases, 
+>you name it. We’ve never hosted Cassandra inside containers, and wonder how best to get started. Can you help ?
+>
+>Daniel: Excellent question ! DataStax recently produced and open sourced its Kubernetes Operator, which will get you all that you need. 
+>This operator supports open source Cassandra, DataStax Enterprise, and more.
+>
+>In the real world, expectedly, you’d use this operator to stand up pods hosting Cassandra on GKE or similar. For better learning and 
+>debugging, this article will actually do this work on our laptop; greater control, greater control to break things for test, other.
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_45_KubernetesOperator.pdf)
+>
+>[Download YAML files for labs here (TarBall format)](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_45_KubernetesOperator.tar)
+
+August 2020 - -
+>Customer: My company has diffficulty moving applications into production related to data at scale. E.g., we program then unit 
+>and system test with 5-15 rows of data, then when we get into production with millions of lines of data, things fail. There 
+>has to be an easier way to overcome this challenge. Can you help ?
+>
+>Daniel: Excellent question ! With all of the pressures we face today just to get applications written, unit testing often suffers, 
+>system testing suffers worse, and then testing applications at scale often never happens. Fortunately, we have an easy solution.
+>
+>For the past 10 years inside DataStax, we’ve perfected NoSQLBench, our now open source distributed data platform, volume data generation 
+>and testing tool. In this article we will overview NoSQLBench, enabling you to see if NoSQLBench can meet your needs too.
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_44_NoSQLBench.pdf)
+>
+>[PowerPoint(Added detail to the above)](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_44_NoSQLBench_Slides.pdf)
+>
+>[The final YAML file/solution used in this article](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_44_NoSQLBench.yaml)
+
+July 2020 - -
+>Customer: Okay, so my company is finally ready to “database as a service (DBaaS)". We also want to move to a micro-services 
+>architecture, and possibly GraphQL. Can you help ?
+>
+>Daniel: Excellent question ! In this series we’ve previously covered GraphQL, and previously covered geo-spatial queries 
+>using the DataStax Cassandra as a service titled, Astra, which also acted as our primer on Astra.
+>
+>In this article, we specifically cover Astra API programming.
+>
+>[Download whitepaper here](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_43_AstraApiProgramming.pdf)
+>
+>[Application program data](https://github.com/farrell0/DataStax-Developers-Notebook/blob/master/2020/DDN_2020_43_NoteBook.tar) in the form
+>of a DataStax Studio Notebook, in standard TAR file form.
+
 June 2020 - -
 >Customer: My company is investigating using DataStax database as a service, titled DataStax Astra (Astra), to aid 
 >in our application development. I know Astra is exactly equal to Apache Cassandra, which means that the DataStax 
